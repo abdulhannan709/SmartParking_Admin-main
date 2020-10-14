@@ -94,7 +94,7 @@ public class fragmentChat extends Fragment {
 
     public void func(){
         final ArrayList<HashMap<String, String>> list = new ArrayList<>();
-        db.collection("adminchat").document(renterid).collection("messages")
+        db.collection("adminchat").document(renterid).collection("messages").orderBy("time")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
